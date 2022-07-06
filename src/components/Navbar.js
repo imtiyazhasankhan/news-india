@@ -21,11 +21,13 @@ export class Navbar extends Component {
                                     Catagory
                                 </a>
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <button className="dropdown-item" onClick={category}>Khushi</button>
-                                    <a className="dropdown-item" href="/">Politics</a>
-                                    <a className="dropdown-item" href="/">Cricket</a>
-                                    <a className="dropdown-item" href="/">Technology</a>
-                                    <a className="dropdown-item" href="/">Top Headlines</a>
+                                    <button className="dropdown-item" onClick={category}>Technology</button>
+                                    <button className="dropdown-item" onClick={category}>Scinece</button>
+                                    <button className="dropdown-item" onClick={category}>Sport</button>
+                                    <button className="dropdown-item" onClick={category}>Health</button>
+                                    <button className="dropdown-item" onClick={category}>Entertainment</button>
+                                    
+                                    {/* business entertainment general health science sports technology */}
                                 </div>
                             </li>
                             <li className="nav-item">

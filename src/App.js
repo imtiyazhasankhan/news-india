@@ -8,27 +8,33 @@ import Crowsel from './components/Crowsel';
 
 export default class App extends Component {
 
-  constructor() {
+  constructor(){
     super()
     this.state = {
-      category: 'india',
+      category: "general",
+      key: 'general'
     }
   }
 
-  changeCategory = async () => {
-    this.setState({
-      category: 'entertainment'
-    })
-    console.log("changeCategory function called")
-  }
+   changeCategory = async()=>{
+      this.setState({ 
+        category: "entertainment",
+        key: "entertainment"
+      })
+      // window.location.reload();
+      console.log(this.state.category)
+    }
+
 
   render() {
+    
     return (
       <div>
         <Navbar title="News-India" category={this.changeCategory} />
         <div className="container">
           <Crowsel />
-          <News category={this.state.category} />
+          {/* key={} if components is not mounting after chnageing props, then add unique key  */}
+          <News key={this.state.key} category={this.state.category} />
         </div>
       </div>
     )

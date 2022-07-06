@@ -1,11 +1,13 @@
-.navbar{
+.navbar {
   background-color: #ffffffe2;
   backdrop-filter: saturate(170%) blur(17px);
 }
-.cntfld{
+
+.cntfld {
   width: 80%;
 }
-.dropdown-menu{
+
+.dropdown-menu {
   background-color: #ffffffe2;
   backdrop-filter: saturate(170%) blur(17px) !important;
   margin-top: 10px;
@@ -16,7 +18,7 @@
 
 }
 
-.card{
+.card {
   width: 400px;
   border: none;
   background-color: aliceblue;
@@ -26,22 +28,50 @@
   overflow: hidden;
 }
 
-.bdr-20{
+.bdr-20 {
   border-radius: 20px;
 }
 
-.newsContainer{
+.newsContainer {
   display: grid;
   grid-template-columns: auto auto auto;
 }
 
-#carouselExampleIndicators{
+#carouselExampleIndicators {
   /* background-color: red; */
   max-width: 500px;
   max-height: 300px;
   margin: 30px;
 }
-.carousel-item img{
+
+.carousel-item img {
   width: 500px !important;
   aspect-ratio: 5/3;
+}
+
+#loadingDiv {
+  background-color: #f5f5f5;
+  padding: 2px;
+  border-radius: 100px;
+  align-items: center;
+  justify-content: center;
+}
+
+#loadingDiv #circle {
+  width: 50px;
+  height: 50px;
+  border: 10px solid transparent;
+  border-top-color: #0D6EFD;
+  border-radius: 100%;
+  animation: loadingAnimation 1s linear infinite;
+}
+
+@keyframes loadingAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
