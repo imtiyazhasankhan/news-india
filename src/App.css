@@ -3,19 +3,8 @@
   backdrop-filter: saturate(170%) blur(17px);
 }
 
-.cntfld {
-  width: 80%;
-}
-
-.dropdown-menu {
-  background-color: #ffffffe2;
-  backdrop-filter: saturate(170%) blur(17px) !important;
-  margin-top: 10px;
-  border-radius: 0px;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
-  border: none;
-
+.navbar-nav .nav-item  .active{
+  color: #0D6EFD;
 }
 
 .card {
@@ -28,25 +17,9 @@
   overflow: hidden;
 }
 
-.bdr-20 {
-  border-radius: 20px;
-}
-
 .newsContainer {
   display: grid;
   grid-template-columns: auto auto auto;
-}
-
-#carouselExampleIndicators {
-  /* background-color: red; */
-  max-width: 500px;
-  max-height: 300px;
-  margin: 30px;
-}
-
-.carousel-item img {
-  width: 500px !important;
-  aspect-ratio: 5/3;
 }
 
 #loadingDiv {

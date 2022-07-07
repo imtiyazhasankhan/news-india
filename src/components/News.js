@@ -16,11 +16,11 @@ export class News extends Component {
 
     constructor() {
         super()
-        console.log('inside News.js Check how much time i am printing')
+        // console.log('inside News.js Check how much time i am printing')
         this.state = {
             articles: this.articles,
             loading: false,
-            number_of_articles: 10
+            number_of_articles: 12
         }
     }
 
@@ -42,7 +42,7 @@ export class News extends Component {
         window.scrollTo(0, 0)
     }
     loadMore = async () => {
-        this.setState({ number_of_articles: this.state.number_of_articles + 10 })
+        this.setState({ number_of_articles: this.state.number_of_articles + 12 })
         this.setState({ loading: true })
 
         // let url = `https://newsapi.org/v2/everything?q=${this.props.category}&apiKey=d16597cdb40841e88f3ff8025f53224a&pageSize=${this.state.number_of_articles}`
