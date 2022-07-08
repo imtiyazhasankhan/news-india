@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 export class News extends Component {
     articles = []
-    
+
     static defaultProps = {
         category: "india"
     }
@@ -56,47 +56,45 @@ export class News extends Component {
             articles: parsedData.articles,
             loading: false
         })
-        console.log("nexxxxxxxxt")
     }
-
-
-
     render() {
 
         let null_image = 'https://nextjsdev.com/content/images/2021/11/news.png'
-        let default_title = "Lorem ipsum dolor sit amet consectetur."
-        let default_desc = "amet consectetur adipisicing elit. Nisi voluptatum quae velit hic, recusandae necessitatibus est, labore illum alias, non doloremque nesciunt. Id nulla quos vel rem explicabo ipsum nemo?"
+        let default_title = "Quo, rem, aliquid maxime itaque commodi cumque asperiores eveniet porro ratione fuga placeat..."
+        let default_desc = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, rem, aliquid maxime itaque commodi cumque asperiores eveniet porro ratione fuga placeat optio modi qui. A sunt officiis..."
+
+        
 
         return (
-            <>
-                <div className='container newsContainer mt-5'>
+            <div className="containerOfNewsContainer">
+                <h1>Top Headlines</h1>
+                <div className='newsContainer'>
                     {this.state.articles.map((element) => {
                         return (
                             <div key={element.url}>
                                 <NewsItems
                                     img={element.urlToImage != null ? element.urlToImage : null_image}
-                                    title={element.title != null ? element.title : default_title}
-                                    description={element.description != null ? element.description : default_desc}
-                                    newsUrl={element.url}
-                                />
+                                    title={element.title != null ? element.title.slice(0,96) + "..." : default_title}
+                                    description={element.description != null ? element.description.slice(0,190)+"..." : default_desc}
+                                    newsUrl={element.url} />
                             </div>
                         )
 
                     })}
                 </div>
-                <div className="d-flex justify-content-between my-5 px-4">
-                    <button type="button" className="btn btn-primary rounded-5 px-4" onClick={this.scroll_to_top}>Scroll to top</button>
+                <div className="btnContainer">
+                    <button type="button" onClick={this.scroll_to_top}>Scroll to top</button>
 
-                    <div className="d-flex">
+                    <div className="loadingbtn_and_LoadMore">
                         {/* (this.state.loading &&) it means below div will be shown only if {this.state.loading} condition will be True*/}
                         {this.state.loading &&
-                            <div id='loadingDiv' className="d-flex mx-3">
+                            <div id='loadingDiv'>
                                 <div id="circle"></div>
                             </div>}
-                        <button type="button" className="btn btn-primary rounded-5 px-4" onClick={this.loadMore}>Load More</button>
+                        <button type="button" onClick={this.loadMore}>Load More</button>
                     </div>
                 </div>
-            </>
+            </div>
         )
     }
 }

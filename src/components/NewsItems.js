@@ -8,13 +8,13 @@ export class NewsItems extends Component {
     render() {
         let { img, title, description, newsUrl } = this.props
         return (
-            <div id='card' className="card rounded-5 m-3">
-                <img src={img} className="card-img-top" alt="..." />
-                <div className="card-body">
-                    <h5 className="card-title">{title}</h5>
-                    <p className="card-text">{description}</p>
-                    <a href={newsUrl} target="_blank" rel="noopener noreferrer" className="btn-sm btn btn-primary rounded-5 px-4">Read more</a>
+            <div className="NewsCard">
+                <img src={img} alt="News" />
+                <div className="cardBody">
+                    <h5>{title}</h5>
+                    <p>{description}</p>
                 </div>
+                    <a href={newsUrl} target="_blank" rel="noopener noreferrer">Read more</a>
             </div>
 
         )

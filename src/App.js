@@ -10,6 +10,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import Weather from './components/Weather';
 
 
 export default class App extends Component {
@@ -36,6 +37,7 @@ export default class App extends Component {
           
           <BrowserRouter>
             <Navbar title="News-India" />
+            <Weather/>
             {/* <Crowsel /> */}
             <Routes>
               <Route path="/" element={<News key={"general"} category={"general"} />}></Route>
