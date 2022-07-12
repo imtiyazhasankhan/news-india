@@ -12,15 +12,40 @@ import {
 } from "react-router-dom";
 import Weather from './components/Weather';
 
-
 export default class App extends Component {
+  location_ = []
+  currentUserLocation = ""
+  feelsLike = "Chill"
 
   constructor() {
     super()
     this.state = {
       category: "general",
-      key: 'general'
+      key: 'general',
+      location: this.location_,
+      temp: '',
+      country: '',
+      feelsLike: this.feelsLike,
+      city: null,
+      currentUserLocation: this.currentUserLocation
     }
+  }
+
+  async componentDidMount() {
+    let weatherApi = `https://api.weatherapi.com/v1/current.json?key=c8ec5c78e09448f6bce75309220907&q=${this.state.currentUserLocation}'&aqi=no`
+    let data = await fetch(weatherApi)
+    let parsedData = await data.json()
+    let geoLication = 'https://geolocation-db.com/json/'
+    let locationData = await fetch(geoLication)
+    let parsedLocation = await locationData.json()
+    this.setState({
+      location: parsedData.location,
+      temp: `${parsedData.current.temp_c}°`,
+      country: parsedData.location.country,
+      city: parsedLocation.city,
+      feelsLike: `Feels like ${parsedData.current.feelslike_c}`,
+      currentUserLocation: parsedLocation.IPv4
+    })
   }
 
   changeCategory = async () => {
@@ -31,13 +56,23 @@ export default class App extends Component {
     console.log(this.state.category)
   }
 
+  // searchFunc = ()=>{
+  //   let userInputValue = document.getElementById("searchBox").value
+  //   console.log(userInputValue)
+  // }
 
-  render() {
+
+  render() {  
     return (
           
           <BrowserRouter>
-            <Navbar title="News-India" />
-            <Weather/>
+            <Navbar title="News-India"/>
+            <Weather 
+              temp={this.state.temp} 
+              city={this.state.city} 
+              country={this.state.country} 
+              feelsLike={this.state.feelsLike}
+            />
             {/* <Crowsel /> */}
             <Routes>
               <Route path="/" element={<News key={"general"} category={"general"} />}></Route>
@@ -49,18 +84,6 @@ export default class App extends Component {
             </Routes>
           </BrowserRouter>
     )
-
-    // return (
-    //   <div>
-    //     <Navbar title="News-India" category={this.changeCategory} />
-    //     <div className="container">
-    //       <Crowsel />
-    //       {/* key={} if components is not mounting after chnageing props, then add unique key  */}
-    //       <News key={this.state.key} category={this.state.category} />
-    //     </div>
-    //   </div>
-    // )
-
   }
 }
 

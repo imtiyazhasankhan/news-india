@@ -76,7 +76,7 @@ html {
   top: 0;
   position: fixed;
   z-index: 999;
-  padding: 10px 7%;
+  /* padding: 10px 7%; */
   /* border-bottom: 1px solid coral; */
 }
 .navbar{
@@ -84,7 +84,8 @@ html {
   position: fixed;
   /* background-color: #a5c6f5; */
   left: 0; right: 0;
-  width: 77vw;
+  /* width: 77vw; */
+  width: 1333px;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -97,6 +98,9 @@ html {
 .navbar .leftDiv .menuButton{
   width: 30px;
 }
+
+
+
 #nameOfApp{
   font-size: 1.4rem;
   text-decoration: none;
@@ -123,17 +127,42 @@ html {
   height: 35px;
   border-radius: 100px;
 }
-/* .rightDiv .searchBarContainer{
-  background-color: bisque;
-} */
+.rightDiv .searchBarContainer{
+  /* background-color: bisque; */
+  /* width: 300px; */
+  display: flex;
+}
 
-#searchBox, #searchButton{
+#searchBox{
   display: none;
+  height: 30px;
+  outline: none;
+  line-height: 29px;
+  padding: 3px 20px;
+  border-top-left-radius: 13px;
+  border-bottom-left-radius: 13px;
+  margin-top: 5.1px;
+  margin-right: 5.1px;
+  border: 1px solid var(--primary);
+}
+#searchButton{
+  display: none;
+  background-color: var(--primary);
+  color: white;
+  border-bottom-right-radius: 13px;
+  border-top-right-radius: 13px;
+  height: 37px;
+  outline: none;
+  line-height: 23.4px;
+  margin-top: 5.1px;
+  margin-right: 5.1px;
+  padding: 4px 25px;
+  border: 0px;
 }
 
 .rightDiv .searchBarContainer img{
   width: 30px;
-  margin-top: 12px;
+  /* margin-top: 12px; */
 }
 
 /* ________________END OF NAVBAR______________________ */
@@ -143,9 +172,11 @@ html {
   margin: auto;
   margin-top: 79px;
   overflow: hidden;
-  /* background-color: beige; */
+  /* background-color: rgb(255, 255, 0); */
+  box-shadow: 0px 20px 20px -20px #64646f33;
   position: relative;
-  width: 77vw;
+  /* width: 77vw; */
+  width: 1340px;
   height: 220px;
   display: flex;
   justify-content: space-between;
@@ -158,9 +189,9 @@ html {
   width: fit-content;
   display: flex;
   position: absolute;
-  bottom: 20px;
+  bottom: 0px;
   left: 20px;
-  border-bottom: 3px solid #333;
+  /* border-bottom: 3px solid #333; */
   border-radius: 3px;
 }
 .weather .wLeft .weatherInfoContainer #temp{
@@ -172,7 +203,7 @@ html {
   margin-left: 10px;
 }
 .weather .wLeft .weatherInfoContainer .locationAndMoreContainer .wInf{
-  font-size: 1.2rem;
+  font-size: 1.14rem;
   color: #333;
   margin-top: 6.5px;
   margin-bottom: 6.5px;
@@ -201,7 +232,7 @@ html {
   position: absolute;
   width: 65px;
 	height: 30px;
-	background: #e5e5e5;
+	background: #e5e5e5f3;
 	border-radius: 100px / 50px;
 }
 .cloud { 
@@ -227,13 +258,13 @@ html {
   position: absolute;
   width: 70px;
 	height: 30px;
-	background: #f6f6f6;
+	background: #f6f6f6e4;
 	border-radius: 100px / 50px;
 }
 .cloud1 { 
   margin-left: 100px;
   bottom: 10px;
-  animation: cloud 60s infinite linear;
+  animation: cloud 30s infinite linear;
 }
 @keyframes cloud {
     0%   { left: -110px; }
@@ -254,10 +285,11 @@ html {
 
 /* ________________News Container______________________ */
 .containerOfNewsContainer{
-  background-color: #fbfbfb;
+  /* background-color: #fbfbfb; */
   /* border-top-left-radius: 100px;
   border-top-right-radius: 100px; */
-  width: 100vw;
+  /* width: 100vw; */
+  width: fit-content;
   margin: auto;
 }
 .containerOfNewsContainer h1{
@@ -341,7 +373,7 @@ html {
   height: 514px;
   overflow: hidden;
   background-color: #ffffff;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: #64646f33 0px 7px 29px 0px;
   /* border: 1px solid springgreen; */
   border-radius: 22px;
   padding: 12px;
