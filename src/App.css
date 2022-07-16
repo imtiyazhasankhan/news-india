@@ -1,38 +1,365 @@
-.App {
-  text-align: center;
+/* _________________________________________________Our Css_______________________________________________________________ */
+
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Questrial&family=Varela+Round&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  --primary: #006CFF;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+  font-family: 'Varela Round', 'Questrial', 'Didact Gothic', sans-serif;
+  transition: all 0.5s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* ________________FOR NAVBAR______________________ */
+.navContainer{
+  background-color: #ffffffe0;
+  backdrop-filter: saturate(178%) blur(17px);
+  width: 100vw;
+  height: 50px;
+  top: 0;
+  position: fixed;
+  z-index: 999;
+  /* padding: 10px 7%; */
+  /* border-bottom: 1px solid coral; */
+}
+.navbar{
+  z-index: 999;
+  position: fixed;
+  /* background-color: #a5c6f5; */
+  left: 0; right: 0;
+  /* width: 77vw; */
+  width: 1333px;
+  margin: auto;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  height: fit-content;
+}
+.navbar .leftDiv, .navbar .rightDiv{
+  display: flex;
+  /* background-color: aquamarine; */
+}
+.navbar .leftDiv .menuButton{
+  width: 30px;
+}
+
+
+
+#nameOfApp{
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #333;
+  line-height: 50px;
+}
+.navbar .rightDiv .categoriesContainer{
+  display: flex;
+}
+.navbar .rightDiv .categoriesContainer .nav-link{
+  color: #555555;
+  text-decoration: none;
+  line-height: 50px;
+  margin: 0px 20px;
+}
+.active{
+  color: var(--primary) !important;
+}
+.seprater{
+  background-color: #cccccc;
+  margin: 0px 20px;
+  width: 4px;
+  margin-top: 7.5px;
+  height: 35px;
+  border-radius: 100px;
+}
+.rightDiv .searchBarContainer{
+  /* background-color: bisque; */
+  /* width: 300px; */
+  display: flex;
+}
+
+#searchBox{
+  display: none;
+  height: 30px;
+  outline: none;
+  line-height: 29px;
+  padding: 3px 20px;
+  border-top-left-radius: 13px;
+  border-bottom-left-radius: 13px;
+  margin-top: 5.1px;
+  margin-right: 5.1px;
+  border: 1px solid var(--primary);
+}
+#searchButton{
+  display: none;
+  font-size: 1rem;
+  background-color: var(--primary);
+  color: white;
+  border-bottom-right-radius: 13px;
+  border-top-right-radius: 13px;
+  height: 37px;
+  outline: none;
+  line-height: 36.4px;
+  margin-top: 5.1px;
+  margin-right: 5.1px;
+  padding: 0px 24px;
+  border: 0px;
+  text-decoration: none;
+}
+
+.rightDiv .searchBarContainer img{
+  width: 30px;
+  /* margin-top: 12px; */
+}
+
+/* ________________END OF NAVBAR______________________ */
+
+/* ________________FOR WeatheR______________________ */
+.weather{
+  margin: auto;
+  margin-top: 79px;
+  overflow: hidden;
+  /* background-color: rgb(255, 255, 0); */
+  box-shadow: 0px 20px 20px -20px #64646f33;
+  position: relative;
+  /* width: 77vw; */
+  width: 1340px;
+  height: 220px;
+  display: flex;
+  justify-content: space-between;
+}
+.weather .wLeft{
+  /* border: 1px solid red; */
+  width: 45%;
+}
+.weather .wLeft .weatherInfoContainer{
+  width: fit-content;
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+  left: 20px;
+  /* border-bottom: 3px solid #333; */
+  border-radius: 3px;
+}
+.weather .wLeft .weatherInfoContainer #temp{
+  font-size: 3.5rem;
+  color: #333;
+}
+.weather .wLeft .weatherInfoContainer .locationAndMoreContainer{
+  /* background-color: aquamarine; */
+  margin-left: 10px;
+}
+.weather .wLeft .weatherInfoContainer .locationAndMoreContainer .wInf{
+  font-size: 1.14rem;
+  color: #333;
+  margin-top: 6.5px;
+  margin-bottom: 6.5px;
+}
+.weather .wLeft .weatherInfoContainer .locationAndMoreContainer .location{
+  font-size: 1rem;
+  color: #777;
+}
+
+.weather .wRight{
+  /* border: 1px solid rgb(134, 104, 255); */
+  width: 45%;
+}
+.weather .wRight .sooraj{
+  width: 251px;
+  height: 223px;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(255, 147, 70, 0.9) 0%, rgba(255, 155, 38, 0.513542) 42.94%, rgba(255, 216, 77, 0.260417) 71.06%, rgba(255, 255, 255, 0) 100%);
+  position: absolute;
+  right: 20px;
+  top: 45%;
+}
+
+/* _____________________Cloud___________________ */
+/* could taken from https://codepen.io/Christopherallen/pen/WNoLOB */
+.cloud, .cloud:before, .cloud:after {
+  position: absolute;
+  width: 65px;
+	height: 30px;
+	background: #e5e5e5f3;
+	border-radius: 100px / 50px;
+}
+.cloud { 
+  bottom: 100px;
+  animation: cloud 50s infinite linear;
+}
+@keyframes cloud {
+   
+    0%   { left: -100px; }
+    100% { left: 1000px; } 
+}
+.cloud:before {
+  content: '';
+  left: 50px;
+}
+.cloud:after {
+  content: '';
+  left: 25px;
+  top: -10px;
+}
+/* ___________could1___________ */
+.cloud1, .cloud1:before, .cloud1:after {
+  position: absolute;
+  width: 70px;
+	height: 30px;
+	background: #f6f6f6e4;
+	border-radius: 100px / 50px;
+}
+.cloud1 { 
+  margin-left: 100px;
+  bottom: 10px;
+  animation: cloud 30s infinite linear;
+}
+@keyframes cloud {
+    0%   { left: -110px; }
+    100% { left: 1000px; } 
+}
+.cloud1:before {
+  content: '';
+  left: 50px;
+}
+.cloud1:after {
+  content: '';
+  left: 25px;
+  top: -10px;
+}
+
+/* ________________END OF WEATHER______________________ */
+
+
+/* ________________News Container______________________ */
+.containerOfNewsContainer{
+  /* background-color: #fbfbfb; */
+  /* border-top-left-radius: 100px;
+  border-top-right-radius: 100px; */
+  /* width: 100vw; */
+  width: fit-content;
+  margin: auto;
+}
+.containerOfNewsContainer h1{
+  width: fit-content;
+  margin: auto;
+  color: var(--primary);
+  padding-top: 25px;
+  padding-bottom: 10px;
+  /* background-color: red; */
+}
+.newsContainer{
+  /* background-color: #ba4b4b; */
+  width: fit-content;
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.btnContainer{
+  display: flex;
+  justify-content: space-between;
+  /* background-color: aquamarine; */
+  width: 1333px;
+  margin: auto;
+  padding-bottom: 10px;
+}
+.btnContainer button{
+  font-size: 1rem;
+  border: none;
+  background-color: var(--primary);
+  border: 2px solid white;
+  padding: 6px 20px;
+  width: fit-content;
+  border-radius: 12px;
+  color: white;
+  display: block;
+}
+.btnContainer button:hover{
+  opacity: 0.8;
+}
+.btnContainer .loadingbtn_and_LoadMore{
+  display: flex;
+}
+/* _____________________________________________ */
+#loadingDiv {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-radius: 100px;
+  margin-right: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+#loadingDiv #circle {
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border: 5px solid transparent;
+  border-top-color: var(--primary);
+  border-left-color: #69a5ff;
+  border-bottom-color: #d3e5ff;
+  border-radius: 100%;
+  animation: loadingAnimation 1s linear infinite;
 }
 
-@keyframes App-logo-spin {
+@keyframes loadingAnimation {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+} 
+/* __________________________End of loading & End of NewsContainer_______________________- */
+/* ________________END OF NEWS CONTAINER______________________ */
+
+/* ________________________________News Cards______________________________ */
+.NewsCard{
+  /* margin: auto; */
+  position: relative;
+  width: 400px;
+  /* height: 514px; */
+  height: 428px;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: #64646f33 0px 7px 29px 0px;
+  /* border: 1px solid springgreen; */
+  border-radius: 22px;
+  padding: 12px;
+  margin: 16px;
 }
+.NewsCard img{
+  width: 400px;
+  height: 225px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+.NewsCard .cardBody{
+  margin-top: -25px;
+  /* position: relative; */
+  /* background-color: cyan; */
+}
+.NewsCard .cardBody h5{
+  font-size: 1rem;
+}
+.NewsCard .cardBody p{
+  font-size: 0.9rem;
+}
+.NewsCard a{
+  position: absolute;
+  bottom: 12px;
+  text-decoration: none;
+  border: 2px solid var(--primary);
+  padding: 6px 20px;
+  width: fit-content;
+  border-radius: 12px;
+  color: var(--primary);
+  display: block;
+}
+.NewsCard a:hover{
+  background-color: var(--primary);
+  color: white;
+}
+/* ________________________________End of News Cards______________________________ */
